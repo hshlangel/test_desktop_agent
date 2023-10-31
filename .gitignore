@@ -1,0 +1,16 @@
+venv_agent/*
+app/logs/*
+log/*
+*.log
+*.pyc
+app/build/*
+app/dist/*
+
+*.spec
+alembic/agentapp_decrypt.db
+alembic/agentapp_encrypt.db
+前端_old.zip
+app/_internal/*
+*.exe
+app/main_win.py
+app/report/*
