@@ -95,11 +95,12 @@ def main():
     try:
         # 初始化日誌
         if VERSION_TYPE == VersionType.VT_RELEASE:
-            Logger().init('blockatm-guard', f'{get_run_dir()}/logs', level='info')
+            Logger().init('blockatm-guard', '/Users/hr/Desktop/logs', level='info')
         else:
-            Logger().init('blockatm-guard', f'{get_run_dir()}/logs', level='debug')
+            Logger().init('blockatm-guard', '/Users/hr/Desktop/logs', level='debug')
         
         Logger().logger.info("-----------------------------------------------------------")
+        Logger().logger.info(f"run dir = {get_run_dir()}")
         Logger().logger.info("blockatm-guard start")
 
         # 獲取監聽端口
