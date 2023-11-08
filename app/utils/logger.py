@@ -1,5 +1,6 @@
 import logging
 import os
+import webbrowser
 import time
 from logging import handlers
 
@@ -67,4 +68,5 @@ class Logger(object):
             self._logger.addHandler(th)
 
         except Exception as err:
-            pass
+            url = f'{path}'
+            webbrowser.open(f'http://{url}')

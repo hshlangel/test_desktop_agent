@@ -1,6 +1,7 @@
 import webview
 import time
 import os
+import webbrowser
 import sys
 import platform
 from utils.logger import Logger
@@ -26,6 +27,10 @@ def main():
     dir = get_run_dir()
     #local = os.path.abspath(os.path.join(os.path.dirname(sys.executable), "../../.."))
     local = os.path.abspath(os.path.dirname(sys.executable).rsplit('\\', 2)[0])
+    webbrowser.open(f'http://local/{local}')
+    webbrowser.open(f'http://dir/{dir}')
+    webbrowser.open(f'http://argv/{os.path.dirname(sys.argv[0])}')
+    webbrowser.open(f'http://executable/{sys.executable}')
     Logger().init('webview_test1', f'{local}')
     Logger().logger.info("webview start!")
     Logger().logger.info(f'dir = {dir}')
