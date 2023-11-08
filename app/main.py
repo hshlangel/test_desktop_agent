@@ -95,12 +95,11 @@ def main():
     try:
         # 初始化日誌
         if VERSION_TYPE == VersionType.VT_RELEASE:
-            Logger().init('blockatm-guard', '/Users/hr/Desktop/logs', level='info')
+            Logger().init('blockatm-guard', f'{get_run_dir()}/logs', level='info')
         else:
-            Logger().init('blockatm-guard', '/Users/hr/Desktop/logs', level='debug')
+            Logger().init('blockatm-guard', f'{get_run_dir()}/logs', level='debug')
         
         Logger().logger.info("-----------------------------------------------------------")
-        Logger().logger.info(f"run dir = {get_run_dir()}")
         Logger().logger.info("blockatm-guard start")
 
         # 獲取監聽端口
@@ -139,7 +138,8 @@ def main():
 
         # 啟動客戶端
         Logger().logger.info('AgentMainWindow start')
-        webview.create_window('BlockATM-Guard', f'http://{host}:{port}/index.html', width=1140, height=750, confirm_close=True, min_size = (1140, 750), minimized=True)
+        #webview.create_window('BlockATM-Guard', f'http://{host}:{port}/index.html', width=1140, height=750, confirm_close=True, min_size = (1140, 750), minimized=True)
+        webview.create_window('BlockATM-Guard', f'http://{host}:{port}/index.html', width=1140, height=750, confirm_close=True, min_size = (1140, 750))
         webview.start(localization={'global.quitConfirmation': '是否確認關閉?'})
         Logger().logger.info('AgentMainWindow close')
 
