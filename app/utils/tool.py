@@ -21,7 +21,9 @@ def get_run_dir():
     if 'python' in os.path.basename(executable_file):
         return '.'
     
-    return os.path.join(os.path.dirname(sys.executable), "../../..")
+    return os.path.dirname(sys.executable).rsplit('/', 3)[0]
+    #return os.path.dirname(executable_file)
+    #return os.path.join(os.path.dirname(sys.executable), "../../..")
 
 def get_mac_address():
     """
