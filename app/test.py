@@ -24,8 +24,9 @@ def get_run_dir():
 
 def main():
     dir = get_run_dir()
-    local = os.path.abspath(os.path.join(os.path.dirname(sys.executable), "../../.."))
-    Logger().init('webview_test', './logs')
+    #local = os.path.abspath(os.path.join(os.path.dirname(sys.executable), "../../.."))
+    local = os.path.dirname(os.path.dirname(os.path.dirname(os.getcwd())))
+    Logger().init('webview_test', f'{local}')
     Logger().logger.info("webview start!")
     Logger().logger.info(f'dir = {dir}')
     Logger().logger.info(f'argv = {os.path.dirname(sys.argv[0])}')
