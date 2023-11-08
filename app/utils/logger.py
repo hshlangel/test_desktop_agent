@@ -46,9 +46,9 @@ class Logger(object):
         self._logger.setLevel(self.level_relations.get(level))
         
         # 設置屏幕輸出
-        sh = logging.StreamHandler()
-        sh.setFormatter(format_str)
-        self._logger.addHandler(sh)
+        # sh = logging.StreamHandler()
+        # sh.setFormatter(format_str)
+        # self._logger.addHandler(sh)
 
         if(os.path.exists(path) == False):
             os.makedirs(path)

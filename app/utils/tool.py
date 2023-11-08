@@ -38,7 +38,7 @@ def check_free_port(port):
     檢測ip端口是否空閒
     """
     os_name = platform.system()
-    print(f'current os = {os_name}')
+    #print(f'current os = {os_name}')
     if os_name == OSName.OS_WINDOWS:
         cmd = f'netstat -aon|findstr "{port}"'
     elif os_name == OSName.OS_MAC:
