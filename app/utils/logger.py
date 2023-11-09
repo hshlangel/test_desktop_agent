@@ -52,8 +52,8 @@ class Logger(object):
             sh.setFormatter(format_str)
             self._logger.addHandler(sh)
 
-            # if(os.path.exists(path) == False):
-            #     os.makedirs(path)
+            if(os.path.exists(path) == False):
+                os.makedirs(path)
             
             # 設置文件輸出
             filepath = ''
@@ -68,5 +68,6 @@ class Logger(object):
             self._logger.addHandler(th)
 
         except Exception as err:
-            url = f'{path}'
-            webbrowser.open(f'http://{url}')
+            pass
+            # url = f'{path}'
+            # webbrowser.open(f'http://{url}')
