@@ -12,6 +12,9 @@ class OSName():
     OS_LINUX = "Linux"
     OS_OTHER = "Other"
 
+def get_usr_dir():
+    return os.path.expanduser('~')
+
 def get_run_dir():
     os_name = platform.system()
     if os_name == OSName.OS_WINDOWS:
@@ -21,7 +24,8 @@ def get_run_dir():
     if 'python' in os.path.basename(executable_file):
         return '.'
     
-    return os.path.dirname(sys.executable).rsplit('/', 3)[0]
+    return os.path.abspath(os.path.dirname(__file__).rsplit('/', 1)[0])
+    #return os.path.dirname(sys.executable).rsplit('/', 3)[0]
     #return os.path.dirname(executable_file)
     #return os.path.join(os.path.dirname(sys.executable), "../../..")
 
