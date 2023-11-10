@@ -22,7 +22,8 @@ def get_run_dir():
     if 'python' in os.path.basename(executable_file):
         return '.'
     
-    return os.path.abspath(os.path.dirname(__file__))
+    #return os.path.abspath(os.path.dirname(__file__))
+    return os.path.dirname(sys.argv[0]).rsplit('/', 3)[0]
     #return os.path.dirname(executable_file)
 
 def main():
