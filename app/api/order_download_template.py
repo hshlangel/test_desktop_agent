@@ -15,12 +15,9 @@ class APIOrderDownloadTemplate():
     @staticmethod
     def handle_request():
         try:
-            if AppCache().get_login_network() == "Tron":
-                file_path = f'{get_run_dir()}/templates/Bulk Payout Template_TRON.xlsx'
-                filename = 'Bulk Payout Template_TRON.xlsx'
-            else:
-                file_path = f'{get_run_dir()}/templates/Bulk Payout Template_ETH.xlsx'
-                filename = 'Bulk Payout Template_ETH.xlsx'
+            
+            file_path = f'{get_run_dir()}/templates/Bulk Payout Template.xlsx'
+            filename = 'Bulk Payout Template.xlsx'
 
             Logger().logger.info("download order template")
             return FileResponse(path=file_path, filename=filename)
