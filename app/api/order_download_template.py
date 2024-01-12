@@ -15,9 +15,14 @@ class APIOrderDownloadTemplate():
     @staticmethod
     def handle_request():
         try:
+
+            login_chainid:str = AppCache().get_login_chain()
+            login_network:str = AppCache().get_chain_network(login_chainid)
             
-            file_path = f'{get_run_dir()}/templates/Bulk Payout Template.xlsx'
-            filename = 'Bulk Payout Template.xlsx'
+            file_path = f'{get_run_dir()}/templates/BlockTemplate_{login_network.replace(' ', '')}.xlsx'
+            filename = f'BlockTemplate_{login_network.replace(' ', '')}.xlsx'
+
+            Logger().logger.info(f'file_path = {file_path}, filename = {filename}')
 
             Logger().logger.info("download order template")
             return FileResponse(path=file_path, filename=filename)

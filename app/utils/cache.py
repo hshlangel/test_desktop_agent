@@ -46,6 +46,8 @@ class AppCache():
     def get_chain_wallet_address(self, chainid : str):
         return self._config.get('address', {}).get(chainid, {}).get('wallet_address', [])
     
+    def get_chain_network(self, chainid):
+        return self._config.get('address', {}).get(chainid, {}).get('network', [])
     # def get_network_list(self):
     #     return self._config.get('address', {}).keys()
     
