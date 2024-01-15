@@ -217,8 +217,8 @@ class AgentServer():
         
         # 下載訂單模板
         @app.get(f"/v1/agent/order/download_order_template", tags=['訂單'], summary='下載訂單模板')
-        def order_download_template():
-            return APIOrderDownloadTemplate.handle_request()
+        def order_download_template(random : str):
+            return APIOrderDownloadTemplate.handle_request(random)
         
         # 下載報表
         @app.get("/v1/agent/order/download_order_report", tags=['訂單'], summary='下載訂單報表')
